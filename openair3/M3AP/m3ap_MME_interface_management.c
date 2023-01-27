@@ -395,7 +395,7 @@ int MME_handle_MBMS_SESSION_STOP_RESPONSE(instance_t instance,
 
   MessageDef *msg_g = itti_alloc_new_message(TASK_M3AP_MME, 0,M3AP_MBMS_SESSION_STOP_RESP); //TODO
 
-  LOG_D(M3AP, "M3AP: MBMSSessionStop-Resp: protocolIEs.list.count %d\n",
+  LOG_D(M3AP, "M3AP MBMSSessionStop-Resp: protocolIEs.list.count %d\n",
          in->protocolIEs.list.count);
   for (int i=0;i < in->protocolIEs.list.count; i++) {
      ie = in->protocolIEs.list.array[i];
@@ -457,7 +457,7 @@ int MME_send_RESET(instance_t instance, m3ap_reset_t * m3ap_reset) {
 }
 
 
-int MME_handle_RESET_ACKKNOWLEDGE(instance_t instance,
+int MME_handle_RESET_ACKKNOWLEDGe(instance_t instance,
                                   uint32_t assoc_id,
                                   uint32_t stream,
                                   M3AP_M3AP_PDU_t *pdu) {
