@@ -6,7 +6,7 @@ services:
         container_name: rfsim5g-oai-nr-ue
         environment:
             RFSIMULATOR: 172.17.0.1         # Resolve to "localhost" on host machine
-            FULL_IMSI: '001010000000001'
+            FULL_IMSI: '001010000000007'
             FULL_KEY: 'fec86ba6eb707ed08905757b1bb44b8f'
             OPC: 'C42449363BBAD02B66D16BC975D77CC1'
             DNN: oai

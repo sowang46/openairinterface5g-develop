@@ -482,8 +482,12 @@ rrc_gNB_process_NGAP_INITIAL_CONTEXT_SETUP_REQ(
     gNB_ue_ngap_id = NGAP_INITIAL_CONTEXT_SETUP_REQ(msg_p).gNB_ue_ngap_id;
 
     ue_context_p   = rrc_gNB_get_ue_context_from_ngap_ids(instance, ue_initial_id, gNB_ue_ngap_id);
-    LOG_I(NR_RRC, "[gNB %ld] Received %s: ue_initial_id %d, gNB_ue_ngap_id %u \n",
-        instance, msg_name, ue_initial_id, gNB_ue_ngap_id);
+    // LOG_I(NR_RRC, "[gNB %ld] Received %s: ue_initial_id %d, gNB_ue_ngap_id %u \n",
+    //    instance, msg_name, ue_initial_id, gNB_ue_ngap_id);
+
+    // Song: print rnti along with NGAP ID
+    LOG_I(NR_RRC, "[gNB %ld, UE %x] Received %s: ue_initial_id %d, gNB_ue_ngap_id %u  \n",
+        instance, ue_context_p->ue_context.rnti, msg_name, ue_initial_id, gNB_ue_ngap_id);
 
     if (ue_context_p == NULL) {
       /* Can not associate this message to an UE index, send a failure to NGAP and discard it! */
